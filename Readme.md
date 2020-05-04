@@ -13,25 +13,25 @@ Running This Application¶
 ## For Linux and Mac:
 
 ```
-$ export FLASK_APP=twin_taps_flaskr
-$ export FLASK_ENV=development
-$ flask run
+export FLASK_APP=twin_taps_flaskr
+export FLASK_ENV=development
+flask run
 ```
 
 For Windows cmd, use set instead of export:
 
 ```
-> set FLASK_APP=twin_taps_flaskr
-> set FLASK_ENV=development
-> flask run
+set FLASK_APP=twin_taps_flaskr
+set FLASK_ENV=development
+flask run
 ```
 
 For Windows PowerShell, use $env: instead of export:
 
 ```
-> $env:FLASK_APP = "twin_taps_flaskr"
-> $env:FLASK_ENV = "development"
-> flask run
+$env:FLASK_APP = "twin_taps_flaskr"
+$env:FLASK_ENV = "development"
+flask run
 ```
 
 You’ll see output similar to this:

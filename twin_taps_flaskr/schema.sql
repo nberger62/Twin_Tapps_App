@@ -7,3 +7,5 @@ CREATE TABLE twin_taps_beers (
 
 INSERT INTO twin_taps_beers (name) VALUES('Cookie Monster Stout');
 INSERT INTO twin_taps_beers (name) VALUES('Friday IPA');
+INSERT INTO twin_taps_beers (name) VALUES('American Amber');
+INSERT INTO twin_taps_beers (name) VALUES('Broke Ass Porter');

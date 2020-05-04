@@ -1,12 +1,11 @@
 import functools
 
-from flask import (
-    Blueprint, jsonify
-)
-
+from flask import Blueprint, jsonify
+from flask_cors import CORS
 from twin_taps_flaskr.db import get_db
 
 bp = Blueprint('beers', __name__, url_prefix='/api/beers')
+CORS(bp)
 
 # api route to render a json list of beers
 @bp.route('/', methods=(["GET"]))

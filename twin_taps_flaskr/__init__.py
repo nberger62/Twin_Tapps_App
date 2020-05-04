@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, jsonify
 from . import db
 from . import beers
 
@@ -26,12 +26,11 @@ def create_app(test_config=None):
         pass
 
     db.init_app(app)
-
     app.register_blueprint(beers.bp)
 
     # Replace with rendering the react client
     @app.route('/')
-    def hello():
-        return 'test'
+    def index():
+        return jsonify('no-content')
 
     return app
