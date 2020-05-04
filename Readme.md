@@ -54,6 +54,14 @@ flask init-db
 
 ## Git
 
+TODO
+
+```
+- Create git ignore
+- List out common git commands, like git status
+- Go over how to use Git
+```
+
 ### Initiatlize Git Repository
 
 ```
