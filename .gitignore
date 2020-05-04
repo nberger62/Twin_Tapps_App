@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+twin-taps-react-client/node_modules
+twin-taps-react-client/.pnp
+twin-taps-react-client/.pnp.js
+
+# testing
+twin-taps-react-client/coverage
+
+# production
+twin-taps-react-client/build
+
+# misc
+twin-taps-react-client/.DS_Store
+twin-taps-react-client/.env.local
+twin-taps-react-client/.env.development.local
+twin-taps-react-client/.env.test.local
+twin-taps-react-client/.env.production.local
+
+twin-taps-react-client/npm-debug.log*
+twin-taps-react-client/yarn-debug.log*
+twin-taps-react-client/yarn-error.log*
