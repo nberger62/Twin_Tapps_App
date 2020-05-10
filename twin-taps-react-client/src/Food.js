@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   card: {
-      height: 200,
     [theme.breakpoints.down("sm")]: {
       width: 400
     }
@@ -16,28 +15,22 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Beer = (props) => {
+const Food = (props) => {
   const classes = useStyles();
-  const { beer: {id, name, price, style, abv} } = props
+  const { food: {id, name} } = props
   return (
         <Card key={id} className={classes.card}>
           <CardHeader title={name}/>
           <CardContent>
             <Typography variant="body1">
-              ${price}
-            </Typography>
-              <Typography variant="body1">
-              style: {style}
-            </Typography>
-              <Typography variant="body1">
-              ABV: {abv}%
+              Description about this taco.
             </Typography>
           </CardContent>
         </Card>
     )
 };
 
-export default Beer;
+export default Food;
 
 // To DO
 // Prop Types

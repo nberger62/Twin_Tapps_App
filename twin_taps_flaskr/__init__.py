@@ -1,8 +1,7 @@
 import os
 
 from flask import Flask, jsonify
-from . import db
-from . import beers
+from . import beers, food, db
 
 def create_app(test_config=None):
     # create and configure the app
@@ -27,6 +26,7 @@ def create_app(test_config=None):
 
     db.init_app(app)
     app.register_blueprint(beers.bp)
+    app.register_blueprint(food.bp)
 
     # Replace with rendering the react client
     @app.route('/')

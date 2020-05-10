@@ -4,7 +4,7 @@ from flask import Blueprint, jsonify
 from flask_cors import CORS
 from twin_taps_flaskr.db import get_db
 
-bp = Blueprint('beers', __name__, url_prefix='/api/beers')
+bp = Blueprint('food', __name__, url_prefix='/api/food')
 CORS(bp)
 
 # api route to render a json list of beers
@@ -14,13 +14,13 @@ def index():
     db = get_db()
 
     # execute sql to get beers read in from the database
-    queryResult = db.execute('SELECT * FROM twin_taps_beers')
+    queryResult = db.execute('SELECT * FROM twin_taps_food')
     rows = queryResult.fetchall()
 
-    beersJSON = []
+    foodJSON = []
     for row in rows:
         # Append an object to our json list, that has an id and name key from the database row
-        beersJSON.append({ "id": row['id'], "name": row['name'], "style": row['style'], "abv": row['abv'], "price": row['price'] })
+        foodJSON.append({ "id": row['id'], "name": row['name'] })
 
     # render json that has a list of beers
-    return jsonify(data = { "beers": beersJSON })
+    return jsonify(data = { "food": foodJSON })

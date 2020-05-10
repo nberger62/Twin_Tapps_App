@@ -3,7 +3,8 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles"
 import Beer from './Beer'
-import { getBeers } from './Api'
+import Food from './Food'
+import { getBeers, getFood } from './Api'
 import { useQuery } from "react-query"
 import CircularProgress from "@material-ui/core/CircularProgress"
 
@@ -18,12 +19,13 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
 
-  const { isFetching, data: beers } = useQuery("beers", getBeers);
-  
+  const { isFetching: isFetchingBeer, data: beers } = useQuery("beers", getBeers);
+  const { isFetching: isFetchingFood, data: food } = useQuery("food", getFood);
+
   return (
     <div data-testid="app">
-      {isFetching && <CircularProgress />}
       <Grid container className={classes.container}>
+        {isFetchingBeer && <CircularProgress />}
         <Typography variant="h1">Whats on Tap!</Typography>
         {beers && beers.map(beer => {
           return (
@@ -31,6 +33,16 @@ const App = () => {
           )
         })}
       </Grid>
+      <Grid container className={classes.container}>
+        {isFetchingFood && <CircularProgress />}
+        <Typography variant="h1">What tacos would you like to eat?!</Typography>
+        {food && food.map(foodItem => {
+          return (
+            <Food key={foodItem.id} food={foodItem} />
+          )
+        })}
+      </Grid>
+
     </div>
   );
 }

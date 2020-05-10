@@ -4,4 +4,10 @@ export const getBeers = async () => {
   return json.data.beers;
 };
 
-export default { getBeers };
+export const getFood = async () => {
+  const response = await fetch(`/api/food`);
+  const json = await response.json();
+  return json.data.food;
+};
+
+export default { getFood, getBeers };
